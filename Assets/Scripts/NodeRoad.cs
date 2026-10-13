@@ -9,18 +9,15 @@ public class NodeRoad : MonoBehaviour
     private Vector2 interPos;
     
     
-    void Start()
-    {
-        
-    }
-
-    
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            interPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
-            Instantiate(Intersection, interPos, Quaternion.identity);
+            interPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Debug.Log(interPos);
+            Instantiate(Intersection, interPos2, Quaternion.identity);
         }
+        
+        
     }
 }
