@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class CityManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> cities = new List<GameObject>();
+    //[SerializeField] public List<GameObject> cities = new List<GameObject>();
+    //[SerializeField] public List<bool> citiesClicked = new List<bool>();
+    
+    [SerializeField] public List<NodeCity> cities = new List<NodeCity>();
     
     
     void Start()
     {
-        cities.AddRange(GameObject.FindGameObjectsWithTag("City"));
+        foreach (GameObject city in GameObject.FindGameObjectsWithTag("City"))
+        {
+            cities.Add(city.GetComponent<NodeCity>());
+        }
     }
     
     void Update()

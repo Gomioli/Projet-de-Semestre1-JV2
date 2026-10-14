@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,8 @@ public class NodeRoad : MonoBehaviour
     
     [SerializeField] private GameObject Intersection;
     
+    [SerializeField] private CityManager cityManager;
+    
     private Vector2 interPos;
     
     
@@ -13,15 +16,24 @@ public class NodeRoad : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Prend la position de la souris   
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            foreach (NodeCity city in cityManager.cities)
+            {
+                if (city.isCityClicked)
+                {
+                    // Prend la position de la souris   
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
-            // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
-            Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
+                    // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
+                    Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
             
-            Instantiate(Intersection, spawnPos, Quaternion.identity);
+                    Instantiate(Intersection, spawnPos, Quaternion.identity);
+                }
+            }
+            
+            
         }
         
         
     }
+    
 }

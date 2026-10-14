@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeRoad
   Intersection: {fileID: 5769136729964307248, guid: 0fa6f52de387c6844afd8e04f8a12b71, type: 3}
+  cityManager: {fileID: 0}
 --- !u!4 &1561273739
 Transform:
   m_ObjectHideFlags: 0
@@ -438,10 +439,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 176260646479513969, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
-      propertyPath: m_TagString
-      value: City
-      objectReference: {fileID: 0}
     - target: {fileID: 303525933596722553, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
       propertyPath: m_Name
       value: Map1
@@ -485,10 +482,6 @@ PrefabInstance:
     - target: {fileID: 3333457038999481299, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6264478136415320015, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
-      propertyPath: m_TagString
-      value: City
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
