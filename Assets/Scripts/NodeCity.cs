@@ -23,7 +23,7 @@ public class NodeCity : MonoBehaviour
         Collider2D detectedCollider = GetComponent<Collider2D>();
         
         
-        if(detectedCollider.OverlapPoint(mousePos)) // Renvoie un bool de si la position (mousePos) se trouve à l'intérieur d'un collider2D
+        if(detectedCollider.OverlapPoint(mousePos) && Input.GetMouseButtonDown(0)) // Renvoie un bool de si la position (mousePos) se trouve à l'intérieur d'un collider2D ET Si j'appuie sur ma souris
         {
             isCityClicked = true;
         }
