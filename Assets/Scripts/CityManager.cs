@@ -1,14 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CityManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private List<GameObject> cities = new List<GameObject>();
+    
+    
     void Start()
     {
-        
+        cities.AddRange(GameObject.FindGameObjectsWithTag("City"));
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
