@@ -154,7 +154,7 @@ MonoBehaviour:
   cityLayer:
     serializedVersion: 2
     m_Bits: 512
-  isCityClicked: 1
+  isCityClicked: 0
 --- !u!1 &303525933596722553
 GameObject:
   m_ObjectHideFlags: 0
