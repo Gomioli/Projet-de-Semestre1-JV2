@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2515564622900285085}
   - component: {fileID: 6828541146265911830}
+  - component: {fileID: 6859843793117870906}
   m_Layer: 9
   m_Name: City1
   m_TagString: Untagged
@@ -91,6 +92,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6859843793117870906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176260646479513969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baaeb7f96b162474192f9db63cbbf1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeCity
+  cityLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  isCityClicked: 1
 --- !u!1 &303525933596722553
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750364605058993073}
   - component: {fileID: 5907055345115829365}
+  - component: {fileID: 4556386172642821036}
   m_Layer: 9
   m_Name: City2
   m_TagString: Untagged
@@ -307,3 +325,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &4556386172642821036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264478136415320015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baaeb7f96b162474192f9db63cbbf1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeCity
+  cityLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  isCityClicked: 1
