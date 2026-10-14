@@ -17,17 +17,17 @@ public class NodeCity : MonoBehaviour
 
         // Prend la position de la souris
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         
-        // Capte lorsque la souris appuie sur un GO dans cityLayer
-        if (Input.GetMouseButtonDown(0))
+        
+        // Prend le collider2D du GO du script dans la variable detectedCollider
+        Collider2D detectedCollider = GetComponent<Collider2D>();
+        
+        
+        if(detectedCollider.OverlapPoint(mousePos)) // Renvoie un bool de si la position (mousePos) se trouve à l'intérieur d'un collider2D
         {
-            Collider2D detectedCollider = Physics2D.OverlapPoint(mousePos, cityLayer);
-            isCityClicked = detectedCollider == null;
-            
-            //Je ne sais pas pourquoi il m'affiche le Debug.Log 2 fois
-            Debug.Log("CLICKED");
+            isCityClicked = true;
         }
+        
 
     }
 }
