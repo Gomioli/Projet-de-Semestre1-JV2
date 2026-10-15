@@ -8,7 +8,8 @@ public class PossibilitesRoad : MonoBehaviour
     
     [SerializeField] private GameObject possibilitesPrefab;
 
-    public List<Transform> possibilities = new List<Transform>();
+    //public List<Transform> possibilities = new List<Transform>();
+    public List<ClickedPossibility> possibilities = new List<ClickedPossibility>();
     
     private int NumberPossibilities = 45;
     private bool possibilitiesInstantiated = false;
@@ -36,7 +37,7 @@ public class PossibilitesRoad : MonoBehaviour
 
                 for (int i = 0; i < NumberPossibility; i++)
                 {
-                    possibilities.Add(possibilitesPrefab.gameObject.transform.GetChild(i).transform);
+                    possibilities.Add(instance.gameObject.transform.GetChild(i).GetComponent<ClickedPossibility>());
                 }
                 
             }

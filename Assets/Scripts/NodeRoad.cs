@@ -9,8 +9,10 @@ public class NodeRoad : MonoBehaviour
     
     [SerializeField] private CityManager cityManager;
     [SerializeField] private PossibilitesRoad possibilitesRoad;
+    //[SerializeField] private ClickedPossibility clickPossibility;
     
     private Vector2 interPos;
+    private Vector2 possibilityPos;
     
     
     void Update()
@@ -21,21 +23,35 @@ public class NodeRoad : MonoBehaviour
             {
                 if (city.isCityClicked)
                 {
-                    InstantiateIntersection();
+                    CheckWhichPossibility();
+                    InstantiateIntersection(possibilityPos);
                 }
             }
         }
     }
 
-    public void InstantiateIntersection()
+    public void InstantiateIntersection(Vector2 futurPos)
     {
-        // Prend la position de la souris   
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // // Prend la position de la souris   
+        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     
+        // // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
+        // Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
             
-        // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
-        Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
-            
-        Instantiate(Intersection, spawnPos, Quaternion.identity);
+        Instantiate(Intersection, futurPos, Quaternion.identity);
+    }
+
+
+    public void CheckWhichPossibility()
+    {
+        foreach (ClickedPossibility possibility in possibilitesRoad.possibilities)
+        {
+            if (possibility.isPossibilityClicked)
+            {
+                possibilityPos = possibility.transform.position;
+                Debug.Log(possibility.transform.position);
+            }
+        }
     }
     
     
