@@ -8,6 +8,7 @@ public class NodeRoad : MonoBehaviour
     [SerializeField] private GameObject Intersection;
     
     [SerializeField] private CityManager cityManager;
+    [SerializeField] private PossibilitesRoad possibilitesRoad;
     
     private Vector2 interPos;
     
