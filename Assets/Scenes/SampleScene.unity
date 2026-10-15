@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NodeRoad
   Intersection: {fileID: 5769136729964307248, guid: 0fa6f52de387c6844afd8e04f8a12b71, type: 3}
   cityManager: {fileID: 892194390}
+  possibilitesRoad: {fileID: 1561273740}
 --- !u!4 &1561273739
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PossibilitesRoad
   cityManager: {fileID: 892194390}
-  possibilitesPrefab: {fileID: 2043990045572455107, guid: 74db4a16903fa5845adc192ded4b9200, type: 3}
+  possibilitesPrefab: {fileID: 2043990045572455107, guid: 9e269a15d2d257a4e971e28a6aa5dec2, type: 3}
   possibilities: []
 --- !u!1001 &1375908870096952886
 PrefabInstance:
