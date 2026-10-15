@@ -6,6 +6,7 @@ public class NodeRoad : MonoBehaviour
 {
     
     [SerializeField] private GameObject Intersection;
+    [SerializeField] private GameObject RayonPossibility;
     
     [SerializeField] private CityManager cityManager;
     [SerializeField] private PossibilitesRoad possibilitesRoad;
@@ -13,46 +14,61 @@ public class NodeRoad : MonoBehaviour
     
     private Vector2 interPos;
     private Vector2 possibilityPos;
+
+    private GameObject rayonActuel;
+    private Collider2D rayonActuelCollider;
     
     
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            foreach (NodeCity city in cityManager.cities)
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (rayonActuel == null)
             {
-                if (city.isCityClicked)
+                foreach (NodeCity city in cityManager.cities)
                 {
-                    CheckWhichPossibility();
-                    InstantiateIntersection(possibilityPos);
+                    if (city.isCityClicked)
+                    {
+                        InvokePossibility(city.transform);
+                    }
                 }
             }
-        }
-    }
-
-    public void InstantiateIntersection(Vector2 futurPos)
-    {
-        // // Prend la position de la souris   
-        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     
-        // // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
-        // Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
-            
-        Instantiate(Intersection, futurPos, Quaternion.identity);
-    }
-
-
-    public void CheckWhichPossibility()
-    {
-        foreach (ClickedPossibility possibility in possibilitesRoad.possibilities)
-        {
-            if (possibility.isPossibilityClicked)
+            else if (rayonActuelCollider.OverlapPoint(mousePos))
             {
-                possibilityPos = possibility.transform.position;
-                Debug.Log(possibility.transform.position);
+                InstantiateIntersection();
             }
+            
         }
     }
+
+    public void InstantiateIntersection()
+    {
+        // Prend la position de la souris   
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+        // Prend les vecteurs x et y, et modifie le vecteur z pour qu'il soit au dessus du terrain vert
+        Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
+        
+        
+        Instantiate(Intersection, spawnPos, Quaternion.identity);
+        if (rayonActuel != null)
+        {
+            rayonActuel.transform.position = spawnPos;
+        }
+    }
+
+    
+    
+    
+    
+    public void InvokePossibility(Transform cityTransform)
+    {
+        rayonActuel =  Instantiate(RayonPossibility, cityTransform.position, Quaternion.identity);
+        rayonActuelCollider = rayonActuel.GetComponent<Collider2D>();
+    }
+    
     
     
 }
