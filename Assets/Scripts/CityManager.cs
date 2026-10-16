@@ -25,7 +25,7 @@ public class CityManager : MonoBehaviour
     {
         foreach (NodeCity city in cities)
         {
-            if (city.isCityClicked)
+            if (city.isCityClicked && !citiesClicked.Contains(city.gameObject)) // La deuxième condition sert à vérifier si city n'est pas déjà dans la liste citiesClicked. Si elle y est, alors c'est = false, et ne joue pas la boucle
             {
                 citiesNotClicked.Remove(city.gameObject);
                 citiesClicked.Add(city.gameObject);
