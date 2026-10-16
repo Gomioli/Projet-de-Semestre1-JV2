@@ -68,6 +68,9 @@ public class NodeRoad : MonoBehaviour
         rayonActuel =  Instantiate(RayonPossibility, cityTransform.position, Quaternion.identity);
         rayonActuelCollider = rayonActuel.GetComponent<Collider2D>();
     }
+
+
+    
     
     
     
