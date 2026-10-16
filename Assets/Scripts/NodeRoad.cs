@@ -37,6 +37,7 @@ public class NodeRoad : MonoBehaviour
             }
             else if (rayonActuelCollider.OverlapPoint(mousePos))
             {
+                StopRoad();
                 InstantiateIntersection();
             }
             
@@ -70,7 +71,16 @@ public class NodeRoad : MonoBehaviour
     }
 
 
-    
+    public void StopRoad()
+    {
+        if (rayonActuel != null)
+        {
+            if (cityManager.citiesClicked.Count == 2)
+            {
+                Destroy(rayonActuel);
+            }
+        }
+    }
     
     
     
