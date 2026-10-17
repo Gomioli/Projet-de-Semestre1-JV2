@@ -1,8 +1,11 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class NodeCity : MonoBehaviour
 {
     [SerializeField] private LayerMask cityLayer;
+
+    [SerializeField] private NodeRoad nodeRoad;
 
     public bool isCityClicked = false;
     
@@ -25,6 +28,7 @@ public class NodeCity : MonoBehaviour
         
         if(detectedCollider.OverlapPoint(mousePos) && Input.GetMouseButtonDown(0)) // Renvoie un bool de si la position (mousePos) se trouve à l'intérieur d'un collider2D ET Si j'appuie sur ma souris
         {
+            nodeRoad.InstantiateIntersection();
             isCityClicked = true;
         }
     }
