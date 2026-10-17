@@ -422,6 +422,7 @@ MonoBehaviour:
   RayonPossibility: {fileID: 8843211179843138057, guid: ccc0c346bf36c4b47aaad7b8fc98ef20, type: 3}
   cityManager: {fileID: 892194390}
   possibilitesRoad: {fileID: 0}
+  roadReady: 0
 --- !u!4 &1561273739
 Transform:
   m_ObjectHideFlags: 0
@@ -449,6 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a13e27b3a4381b44b5dd3a4a496ef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LineRendererManager
+  LineRendererPrefab: {fileID: 868776226427598643, guid: 43afecb83e6b26849a51ecb37b71268e, type: 3}
+  nodeRoad: {fileID: 1561273738}
 --- !u!1001 &1375908870096952886
 PrefabInstance:
   m_ObjectHideFlags: 0
