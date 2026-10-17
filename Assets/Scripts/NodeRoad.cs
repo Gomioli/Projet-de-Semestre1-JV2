@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class NodeRoad : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> intersections = new List<GameObject>();
     
     [SerializeField] private GameObject Intersection;
     [SerializeField] private GameObject RayonPossibility;
     
     [SerializeField] private CityManager cityManager;
     [SerializeField] private PossibilitesRoad possibilitesRoad;
-    //[SerializeField] private ClickedPossibility clickPossibility;
     
     private Vector2 interPos;
     private Vector2 possibilityPos;
@@ -57,7 +58,8 @@ public class NodeRoad : MonoBehaviour
         Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -9);
         
         
-        Instantiate(Intersection, spawnPos, Quaternion.identity);
+        GameObject interInstance = Instantiate(Intersection, spawnPos, Quaternion.identity);
+        intersections.Add(interInstance);
         if (rayonActuel != null)
         {
             rayonActuel.transform.position = spawnPos;
