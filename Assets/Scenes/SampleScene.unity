@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: nodeRoad
       value: 
       objectReference: {fileID: 1561273738}
+    - target: {fileID: 4556386172642821036, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
+      propertyPath: isCityClicked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6859843793117870906, guid: 23bd96dd6370e0a42a05527062d14bd7, type: 3}
       propertyPath: nodeRoad
       value: 

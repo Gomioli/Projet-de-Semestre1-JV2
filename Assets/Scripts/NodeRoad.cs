@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class NodeRoad : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> intersections = new List<GameObject>();
+    [SerializeField] public List<GameObject> intersections = new List<GameObject>();
     
     [SerializeField] private GameObject Intersection;
     [SerializeField] private GameObject RayonPossibility;
@@ -18,6 +18,8 @@ public class NodeRoad : MonoBehaviour
 
     private GameObject rayonActuel;
     private Collider2D rayonActuelCollider;
+    
+    public bool roadReady = false;
     
     
     void Update()
@@ -84,7 +86,7 @@ public class NodeRoad : MonoBehaviour
             if (cityManager.citiesClicked.Count == 2)
             {
                 Destroy(rayonActuel);
-                Debug.Log("Route prête !");
+                roadReady = true;
             }
             
         }
