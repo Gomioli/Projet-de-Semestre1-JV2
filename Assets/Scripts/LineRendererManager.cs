@@ -27,7 +27,8 @@ public class LineRendererManager : MonoBehaviour
     {
         if (nodeRoad.roadReady)
         {
-            
+            lineRoad.positionCount = nodeRoad.intersections.Count;
+            index = 0;
             foreach (GameObject intersection in nodeRoad.intersections)
             {
                 lineRoad.SetPosition(index, intersection.transform.position);
