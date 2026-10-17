@@ -81,8 +81,12 @@ public class NodeRoad : MonoBehaviour
     {
         if (rayonActuel != null)
         {
-            Destroy(rayonActuel);
-            Debug.Log("Route prête !");
+            if (cityManager.citiesClicked.Count == 2)
+            {
+                Destroy(rayonActuel);
+                Debug.Log("Route prête !");
+            }
+            
         }
     }
     
